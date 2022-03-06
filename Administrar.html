@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Administrador</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/Logo galacteria.png">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div>
+      <br />
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="">
+            <i class="fas fa-users-cog"></i> Dashboard del Administrador
+          </h2>
+          <hr />
+        </div>
+
+        <div class="col-md-12">
+          <h5><i class="fas fa-clipboard-list"></i> Lista de Pedidos</h5>
+        </div>
+
+        <div class="col-md-12">
+          <table id="Pedidos" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Nombre Completo</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Descripción del Pedido</th>
+                <th>Detalles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jonathan Vidales</td>
+                <td>
+                    Porfirio Díaz #500
+                </td>
+                <td>
+                    899503566
+                </td>
+                <td>
+                    MiCorreo@mail.com
+                </td>
+                <td>
+                    Se ha encargado un pastel de Vialactea de Sabores....
+                </td>
+                <td>
+                    <a href="" class="btn btn-outline-success">Ver Detalles</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr/>
+        </div>
+
+        <div class="col-md-12">
+          <h5><i class="fas fa-boxes"></i> Inventario</h5>
+        </div>
+
+        <div class="col-md-12">
+            <table id="Inventario" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th><i class="fas fa-dolly-flatbed"></i> Articulo</th>
+                  <th><i class="fas fa-list-ol"></i> Cantidad</th>
+                  <th><i class="fas fa-filter"></i> Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Moño</td>
+                  <td>
+                      13
+                  </td>
+                  <td>
+                      Adorno
+                  </td>
+                </tr>
+                <tr>
+                    <td>Cartón de Leche</td>
+                    <td>
+                        5
+                    </td>
+                    <td>
+                        Ingredientes
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+            <hr/>
+          </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <hr />
+      <center>Galacteria - <span id="date"></span></center>
+      <br />
+    </footer>
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+ 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css"/>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+ 
+    <script>
+      $("#navbar").load("PlantillaAdmin.html");
+
+      $(document).ready(function () {
+        $("#Pedidos").DataTable();
+        $("#Inventario").DataTable();
+      });
+
+      n = new Date();
+      y = n.getFullYear();
+      document.getElementById("date").innerHTML = y;
+    </script>
+  </body>
+</html>
